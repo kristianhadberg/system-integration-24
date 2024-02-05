@@ -1,0 +1,9 @@
+<person>
+    <name>Kristian</name>
+    <age>26</age>
+    <hobbyList>
+        <hobby>coding</hobby>
+        <hobby>gaming</hobby>
+        <hobby>sports</hobby>
+    </hobbyList>
+</person>
