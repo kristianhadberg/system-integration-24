@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "dotenv-example"
+version = "0.1.0"
+description = ""
+authors = ["kris52h6 <kris52h6@stud.kea.dk>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
