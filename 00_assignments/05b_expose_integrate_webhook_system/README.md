@@ -13,8 +13,8 @@ The accepted event types are currently: **"activity_created"** and **"activity_d
     POST "http://url.com/register"
 
     {
-    		"event": "activity_created",
-    		"url": "http://myurl.com/recieve_webhooks"
+        "event": "activity_created",
+        "url": "http://myurl.com/recieve_webhooks"
     }
 
 If done correctly, the server will respond with status code 201, and a message implying the subscription was successful.
@@ -45,9 +45,9 @@ For this to work, it will require that you have made a POST endpoint in your own
 
 **Simple example of recieving endpoint in NodeJS with Express**
 
-    	app.post("/recieve_webhooks", (req, res) => {
-    		console.log(req.body);
-    	});
+    app.post("/recieve_webhooks", (req, res) => {
+        console.log(req.body);
+    });
 
 You can perform a POST request to the "/ping" endpoint, which will instruct the system to perform a POST request to all subscriptions.
 
