@@ -39,18 +39,21 @@ For this to work, it will require that you have made a POST endpoint in your own
         console.log(req.body);
     });
 
+<br><br>
 You can perform a GET request to the "/ping" endpoint, which will instruct the system to perform a POST request to all subscriptions.
 
 **Ping example:**
 
     GET "http://url.com/ping"
 
+<br><br>
 You can perform a POST request to the endpoint "/create_activity" which will simulate that an activity has been created in the system. Which in turn will perform a call to all subscriptions with the event type **activity_created**
 
 **Example:**
 
     POST "http://url.com/create_activity"
 
+<br><br>
 You can also perform a POST request to the endpoint "/delete_activity" which will simulate that an activity has been deleted from the system. Which in turn will perform a call to all subscriptions with the event type **activity_deleted**
 
 **Example:**
