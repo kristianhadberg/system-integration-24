@@ -27,16 +27,6 @@ You can perform a GET request to "/subscriptions" endpoint, which will return a 
 
     GET "http://url.com/subscriptions"
 
-## Unsubscribe from the Webhook system
-
-To unsubscribe from the webhook system, you must perform a POST request to the URL of the server followed by the "/unregister/{id}" endpoint. The POST request must contain the path parameter id, which refers to the id of the subscription to be deleted.
-
-**Example of unsubscribing:**
-
-    POST "http://url.com/unregister/2"
-
-If done correctly, the server will respond with status code 200, and a message implying the subscription was unregistered successfully.
-
 ## Interacting with the Webhook system
 
 Now that you have your subscriptions set up, it's time to interact with the system.
@@ -49,11 +39,11 @@ For this to work, it will require that you have made a POST endpoint in your own
         console.log(req.body);
     });
 
-You can perform a POST request to the "/ping" endpoint, which will instruct the system to perform a POST request to all subscriptions.
+You can perform a GET request to the "/ping" endpoint, which will instruct the system to perform a POST request to all subscriptions.
 
 **Ping example:**
 
-    POST "http://url.com/ping"
+    GET "http://url.com/ping"
 
 You can perform a POST request to the endpoint "/create_activity" which will simulate that an activity has been created in the system. Which in turn will perform a call to all subscriptions with the event type **activity_created**
 
@@ -66,3 +56,13 @@ You can also perform a POST request to the endpoint "/delete_activity" which wil
 **Example:**
 
     POST "http://url.com/delete_activity"
+
+## Unsubscribe from the Webhook system
+
+To unsubscribe from the webhook system, you must perform a POST request to the URL of the server followed by the "/unregister/{id}" endpoint. The POST request must contain the path parameter id, which refers to the id of the subscription to be deleted.
+
+**Example of unsubscribing:**
+
+    POST "http://url.com/unregister/2"
+
+If done correctly, the server will respond with status code 200, and a message implying the subscription was unregistered successfully.
