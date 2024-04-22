@@ -1,4 +1,4 @@
-# # 09c Auth Integration
+# # 08c Auth Integration
 
 I used Auth0 for this assignment.
 https://auth0.com/
