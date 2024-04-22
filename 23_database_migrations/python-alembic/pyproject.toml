@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "python-alembic"
+version = "0.1.0"
+description = ""
+authors = ["kris52h6 <kris52h6@stud.kea.dk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pymysql = "^1.1.0"
+alembic = "^1.13.1"
+sqlalchemy = "^2.0.29"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
