@@ -6,8 +6,16 @@ import xml.etree.ElementTree as ET
 
 def parse_txt():
     with open('../me.txt', 'r') as f:
-        text = f.read()
-        print(text)
+        text = f.readlines()
+
+        data = {}
+        for line in text:
+            key, value = line.strip().split(': ', 1)
+            if ',' in value:
+                value = [item.strip() for item in value.split(',')]
+            data[key] = value
+
+        print(data)
 
 
 def parse_csv():
@@ -39,7 +47,7 @@ def parse_xml():
 
 
 parse_txt()
-parse_csv()
-parse_json()
-parse_yaml()
-parse_xml()
+# parse_csv()
+# parse_json()
+# parse_yaml()
+# parse_xml()
