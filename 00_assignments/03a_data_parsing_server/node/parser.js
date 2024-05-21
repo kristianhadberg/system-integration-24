@@ -51,8 +51,28 @@ export function parseXml() {
 
 export function parseTxt() {
     try {
-        const data = fs.readFileSync("../me.txt", "utf8");
-        return data;
+        const text = fs.readFileSync("../me.txt", "utf8");
+        const lines = text.split("\n");
+
+        const object = {};
+
+        lines.forEach((l) => {
+            // replace unrequired/filler characters and split into an array of key value pairs
+            const replaceCharacters = l.replaceAll(":", "").replaceAll(",", "");
+            const splitArray = replaceCharacters.split(" ");
+
+            let key = splitArray[0];
+
+            // remove first element of array since that is the key
+            splitArray.shift();
+            let value = splitArray;
+
+            if (key == "name" || key == "age") value = value.toString();
+
+            object[key] = value;
+        });
+
+        return object;
     } catch (err) {
         console.error(err);
     }
