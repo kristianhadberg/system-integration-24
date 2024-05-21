@@ -8,7 +8,7 @@
     $ node app.js
     ```
 
-2.      Go into python directory and run
+2.  Go into python directory and run
     ```
     $ poetry shell
     $ uvicorn main:app
